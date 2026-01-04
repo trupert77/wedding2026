@@ -57,7 +57,7 @@ body{
 }
 .hero-banner{
   height: 260px;
-  background: url("assets/img/hero-banner.jpg") center/cover no-repeat;
+  background: url("assets/img/header.jpg") center/cover no-repeat;
   position: relative;
 }
 .hero-banner:after{
