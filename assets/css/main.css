@@ -665,3 +665,41 @@ hr.bio-split {
 @media (max-width: 600px){
   .joined-art{ align-items:center; }
 }
+
+/* Couple art block */
+.couple-hero {
+  position: relative;
+  width: min(720px, 100%);
+  margin: 0 auto 14px;
+  padding-top: 38px;              /* makes room for the floating sign */
+}
+
+/* The couple illustration */
+.couple-art {
+  display:block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.10);
+  border: 1px solid rgba(15,23,42,.10);
+}
+
+/* The sign hovering above heads */
+.couple-sign {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -55%); /* hover amount */
+  width: min(320px, 82%);
+  height: auto;
+  z-index: 5;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.22));
+  animation: coupleFloat 3.6s ease-in-out infinite;
+  pointer-events: none; /* prevents blocking clicks */
+}
+
+@keyframes coupleFloat{
+  0%   { transform: translate(-50%, -55%); }
+  50%  { transform: translate(-50%, -62%); }
+  100% { transform: translate(-50%, -55%); }
+}
