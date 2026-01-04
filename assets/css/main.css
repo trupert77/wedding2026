@@ -43,6 +43,8 @@ body {
   backdrop-filter: blur(10px);
   background: rgba(246, 239, 230, .75);
   border-bottom: 1px solid var(--line);
+  rotate: -0.8deg;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 .nav-inner {
@@ -67,22 +69,7 @@ body {
   justify-content: flex-end;
 }
 
-.pill {
-  text-decoration: none;
-  color: var(--ink);
-  background: rgba(255, 255, 255, .75);
-  border: 1px solid var(--line);
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 14px;
-}
 
-.pill.primary {
-  background: linear-gradient(135deg, rgba(240, 138, 36, .95), rgba(240, 138, 36, .75));
-  border-color: rgba(240, 138, 36, .35);
-  color: white;
-}
 
 .hero {
   border-radius: 28px;
@@ -306,13 +293,47 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
 }
 
+/* --- Taped nav pills --- */
 .pill {
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  text-decoration: none;
+  color: var(--ink);
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  position: relative;
+  transition: transform .14s ease;
 }
 
-.pill:hover {
-  transform: translateY(-1px);
+/* Tape effect on each pill */
+.pill::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 48px;
+  height: 16px;
+  background: rgba(245,230,210,0.6);
+  border: 1px solid rgba(200,180,150,0.18);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  z-index: 2;
 }
+
+/* Hover lifts the card slightly, tape stays */
+.pill:hover {
+  transform: translateY(-2px) rotate(1deg);
+}
+
+/* Primary pill gets tape too, but recolored */
+.pill.primary::after {
+  background: rgba(255,255,255,0.45);
+  border-color: rgba(255,255,255,0.3);
+}
+
 
 /* Buttons feel clicky */
 .btn {
@@ -437,12 +458,12 @@ body {
 }
 
 .paper-card {
-  background: rgba(255,255,255,0.88);
-  border: 1px solid rgba(15,23,42,0.10);
-  border-radius: var(--radius);
+  grid-column: span 6;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .86);
+  border: 1px solid rgba(15, 23, 42, .10);
   box-shadow: 0 10px 22px rgba(0,0,0,0.06);
-  padding: 18px;
-  position: relative;
 }
 
 .paper-card h3 {
