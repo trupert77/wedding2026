@@ -312,6 +312,13 @@ body {
   position: relative;
   margin-bottom: 8px;
   transform: rotate(-1deg);
+  width: -webkit-fit-available;
+  justify-content: center;
+  color: #fff1e5;
+}
+
+.pill-header:hover {
+  transform: translateY(-2px) rotate(0deg);
 }
 
 
