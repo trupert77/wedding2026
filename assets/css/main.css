@@ -306,12 +306,12 @@ body {
   font-size: 15px;
   padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.82);
+  background-color: rgb(231 111 81);
   border: 1px solid rgba(15,23,42,0.12);
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
   position: relative;
   margin-bottom: 8px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  transform: rotate(-1deg);
 }
 
 
