@@ -620,7 +620,6 @@ hr.bio-split {
   margin: 14px 0;
 }
 
-/* --- FLOATING SIGN OVER HEADS --- */
 .floating-sign {
   position: absolute;
   top: -42px;            /* pulls it upward over heads */
