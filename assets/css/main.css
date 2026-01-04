@@ -38,10 +38,10 @@ body {
 
 .nav {
   position: sticky;
-  top: 0;
+  top: 8px;
   z-index: 20;
   backdrop-filter: blur(10px);
-  background: rgba(246, 239, 230, .75);
+  background: rgba(76, 148, 113, .85);
   border-bottom: 1px solid var(--line);
   rotate: -0.8deg;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
@@ -60,6 +60,12 @@ body {
 .brand {
   font-weight: 900;
   letter-spacing: -.2px;
+  font-size:20px;
+}
+
+.brand2nd {
+  font-weight: 600;
+  font-size: 16px
 }
 
 .links {
@@ -335,7 +341,7 @@ body {
 }
 
 .pill.primary {
-  background-color: #4c9270;
+  background-color: rgb(231 111 81);
 }
 
 /* Buttons feel clicky */
