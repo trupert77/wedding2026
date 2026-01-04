@@ -312,7 +312,7 @@ body {
   font-size: 15px;
   padding: 10px 16px;
   border-radius: 999px;
-  background-color: rgb(231 111 81);
+  background-color: rgb(231 111 81 / 0.75);
   border: 1px solid rgba(15,23,42,0.12);
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
   position: relative;
@@ -767,7 +767,7 @@ hr.bio-split {
 .couple-sign{
   position: absolute;
   left: 50%;
-  top: 0;                          /* anchor to top of container */
+  top: 420px;                          /* anchor to top of container */
   transform: translate(-50%, -60%);
   width: min(420px, 80%);
   height: auto;
@@ -808,7 +808,8 @@ hr.bio-split {
 
 @media (max-width: 520px){
   .couple-sign{
-    width: min(300px, 92%);
+    top: 40px;
+    width: min(230px, 92%);
     transform: translate(-50%, -50%);
     filter: drop-shadow(0 10px 10px rgba(0,0,0,.30));
   }
