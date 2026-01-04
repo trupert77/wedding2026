@@ -22,113 +22,171 @@
         </div>
 
         <div class="wrap">
-            <section class="hero">
-                <div class="hero-banner">
-                    <img src="assets/img/header.png"
-                        alt="Travis & Melissa sign" />
+            <section class="poster">
+                <img class="poster-img" src="assets/img/poster.jpg"
+                    alt="Travis & Melissa storybook poster" />
+
+                <!-- Optional: clickable “jump” buttons overlay -->
+                <div class="poster-nav">
+                    <a href="#details">Details</a>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#party">Wedding Party</a>
+                    <a href="#travel">Travel</a>
+                    <a href="#faq">FAQs</a>
+                </div>
+            </section>
+
+            <section class="paper" id="details">
+                <div class="paper-head">
+                    <h2>Wedding Details</h2>
+                    <div class="stamp">Love.exe: ✅ Booted</div>
                 </div>
 
-                <div class="hero-content">
-                    <div class="hero-title">
-                        <h1>Travis & Melissa</h1>
-                        <p>September 26, 2026 • Res Les Farms, Michigan</p>
+                <div class="paper-grid">
+                    <div class="paper-card">
+                        <h3>When</h3>
+                        <p><strong>Saturday, Sept 26,
+                                2026</strong><br />Ceremony: 4:30 PM</p>
+                        <div class="tiny muted" id="countdown"></div>
                     </div>
 
-                    <div class="card" style="text-align:center;">
-                        <h2>Welcome</h2>
-                        <img
-                            src="assets/img/TravisMelissaSign.png"
-                            alt="Travis & Melissa Sign"
-                            style="width:260px; margin:12px auto; border-radius:18px; box-shadow:var(--shadow);" />
+                    <div class="paper-card">
+                        <h3>Where</h3>
+                        <p><strong>Res Les Farms, Michigan</strong><br />Boujee
+                            farm. Zero chores.</p>
+                        <a class="btn orange" href="travel.html">🧭 Travel &
+                            Stay</a>
                     </div>
 
-                    <div style="text-align:center;">
-                        <span class="ribbon">She saves lives (D.O.) • He saves
-                            Wi-Fi • Bennett guards rings 📚💍🐶</span>
+                    <div class="paper-card">
+                        <h3>Melissa, D.O.</h3>
+                        <ul class="bullets">
+                            <li>Top doc by day, bookworm by night 📚</li>
+                            <li>Heart-healer ❤️</li>
+                            <li>Pocket full of snacks. IYKYK 🍪</li>
+                        </ul>
                     </div>
 
-                    <div class="card" style="text-align:center;">
-                        <h2 style="margin-bottom:6px;">Forever starts in</h2>
-                        <div id="countdown" class="muted"
-                            style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; font-weight:900;"></div>
-                        <div class="btnrow" style="justify-content:center;">
-                            <a class="btn orange" href="rsvp.html">💌 RSVP</a>
-                            <a class="btn blue" href="travel.html">🧭 Travel &
-                                Stay</a>
-                            <button class="btn" onclick="runLoveExe()"
-                                type="button">🧠 Run love.exe</button>
-                        </div>
-                        <p id="statusLine" class="muted"
-                            style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin-top:10px;">
-                            Love: ONLINE • Wi-Fi: STABLE • Bennett: RINGS
-                            SECURED • Ceremony: PENDING DEPLOYMENT
-                        </p>
+                    <div class="paper-card">
+                        <h3>Travis the CEO</h3>
+                        <p class="tiny muted">(Chief Ethernet Officer)</p>
+                        <ul class="bullets">
+                            <li>Marketing + camera nerd 📸</li>
+                            <li>Cable management survivor 🧵</li>
+                            <li>Recovery requires pizza + IPA 🍕🍺</li>
+                        </ul>
                     </div>
 
-                    <div class="grid">
-                        <div class="card col-7">
-                            <h2>Our Story</h2>
-                            <p class="muted">
-                                Melissa is a book-loving D.O. with superhero
-                                energy. Travis is marketing + photography +
-                                “have you tried turning it off and on again?”
-                                We’re not farmers — it’s just a boujee farm and
-                                we’re here for the vibes.
-                            </p>
-                        </div>
-
-                        <div class="card col-5">
-                            <h2>Bennett</h2>
-                            <div class="mascot">
-                                <img src="assets/img/bennett.png"
-                                    alt="Bennett the long-hair dachshund" />
-                                <div>
-                                    <div style="font-weight:900;">Ring
-                                        Security</div>
-                                    <div class="muted">Long-hair dachshund •
-                                        Bowtie • Tiny book stack</div>
-                                </div>
+                    <div class="paper-card mascot-wide">
+                        <div class="mascot-row">
+                            <img src="assets/img/bennett.png" alt="Bennett" />
+                            <div>
+                                <h3>Bennett</h3>
+                                <p class="muted">Long-hair dachshund • Bowtie •
+                                    Tiny book stack • Ring Security 🐶💍</p>
+                                <button class="btn" type="button"
+                                    onclick="runLoveExe()">🧠 Run
+                                    love.exe</button>
+                                <p id="statusLine"
+                                    class="tiny muted mono">Status: ONLINE •
+                                    Treats: ARMED</p>
                             </div>
-                        </div>
-
-                        <div class="card col-6">
-                            <h2>Quick Details</h2>
-                            <ul class="muted"
-                                style="margin:8px 0 0; padding-left:18px;">
-                                <li><strong>Date:</strong> Saturday, Sept 26,
-                                    2026</li>
-                                <li><strong>Venue:</strong> Res Les Farms,
-                                    Michigan</li>
-                                <li><strong>Ceremony:</strong> 4:30 PM</li>
-                                <li><strong>Reception:</strong> 5:30 PM • Barn
-                                    vibes</li>
-                            </ul>
-                        </div>
-
-                        <div class="card col-6">
-                            <h2>System Status</h2>
-                            <p class="muted"
-                                style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace;">
-                                Love: ONLINE • Wi-Fi: STABLE • Snacks: ARMED •
-                                Bennett: MONITORING
-                            </p>
-                            <div class="btnrow">
-                                <a class="btn" href="faq.html">❓ FAQs</a>
-                                <a class="btn" href="schedule.html">🕒 Full
-                                    schedule</a>
-                            </div>
-                        </div>
-
-                        <div class="card col-12">
-                            <h2>Hashtags</h2>
-                            <p class="muted" style="font-weight:900;">
-                                #DoctorAndTheDachshund • #FarmButBoujee •
-                                #LoveInFullPassthrough
-                            </p>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <section class="paper" id="schedule">
+                <div class="paper-head">
+                    <h2>Schedule of Events</h2>
+                    <p class="muted">If you arrive on time, we’re amazed (and
+                        very grateful).</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="time-row"><span>3:30 PM</span><strong>Guests
+                            arrive</strong></div>
+                    <div class="time-row"><span>4:30
+                            PM</span><strong>Ceremony</strong></div>
+                    <div class="time-row"><span>5:00 PM</span><strong>Cocktails
+                            + photos</strong></div>
+                    <div class="time-row"><span>5:30
+                            PM</span><strong>Reception</strong></div>
+                    <div class="time-row"><span>11:00 PM</span><strong>Bonfire +
+                            late-night snacks</strong></div>
+                </div>
+            </section>
+
+            <section class="paper" id="party">
+                <div class="paper-head">
+                    <h2>Wedding Party</h2>
+                    <p class="muted">Your crew goes here — we’ll add icons +
+                        roles next.</p>
+                </div>
+
+                <div class="avatars">
+                    <div class="avatar"><div
+                            class="circle">J</div><div><strong>Jenna</strong><div
+                                class="tiny muted">The brainy
+                                EFF</div></div></div>
+                    <div class="avatar"><div
+                            class="circle">K</div><div><strong>Katie</strong><div
+                                class="tiny muted">Bridesmaid</div></div></div>
+                    <div class="avatar"><div
+                            class="circle">B</div><div><strong>Brian</strong><div
+                                class="tiny muted">(Fake) Best
+                                Man</div></div></div>
+                    <div class="avatar"><div
+                            class="circle">M</div><div><strong>Mark</strong><div
+                                class="tiny muted">Groomsman</div></div></div>
+                    <div class="avatar"><div
+                            class="circle">B</div><div><strong>Brian</strong><div
+                                class="tiny muted">Groomsman</div></div></div>
+                    <div class="avatar"><div
+                            class="circle">D</div><div><strong>Derek</strong><div
+                                class="tiny muted">Groomsman</div></div></div>
+                </div>
+            </section>
+
+            <section class="paper" id="travel">
+                <div class="paper-head">
+                    <h2>Travel & Stay</h2>
+                </div>
+                <div class="paper-grid">
+                    <div class="paper-card">
+                        <h3>Hotels</h3>
+                        <p class="muted">Add your recommended options +
+                            distances.</p>
+                    </div>
+                    <div class="paper-card">
+                        <h3>Airports</h3>
+                        <p class="muted">DTW / AZO (depending where people are
+                            coming from).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="paper" id="faq">
+                <div class="paper-head">
+                    <h2>FAQs</h2>
+                </div>
+                <ul class="bullets">
+                    <li><strong>Are we farmers?</strong> No. This is aesthetic
+                        farming.</li>
+                    <li><strong>Dress code?</strong> Casual-nice. Comfy shoes
+                        recommended.</li>
+                    <li><strong>Will there be a bonfire?</strong> Yes 🔥</li>
+                </ul>
+            </section>
+
+            <footer class="tagbar">
+                <div class="tags">
+                    <span>#DoctorAndTheDachshund</span>
+                    <span>#FarmButBoujee</span>
+                    <span>#LoveAtTheEdge</span>
+                </div>
+                <div class="tiny muted">📍 Res Les Farms, Michigan</div>
+            </footer>
 
             <div class="footer">
                 <div>📍 Res Les Farms, Michigan</div>
