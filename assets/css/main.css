@@ -781,3 +781,26 @@ hr.bio-split {
   50%  { transform: translate(-50%, -59%); }
   100% { transform: translate(-50%, -56%); }
 }
+
+/* Flex split bios */
+.bio-flex{
+  display:flex;
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 16px;
+}
+
+.bio-card{
+  flex: 1 1 0;
+  min-width: 260px; /* keeps it from getting too skinny */
+}
+
+/* Stack on mobile */
+@media (max-width: 820px){
+  .bio-flex{
+    flex-direction: column;
+  }
+}
+
+.bio-card:first-child{ transform: rotate(-0.3deg); }
+.bio-card:last-child{ transform: rotate(0.3deg); }
