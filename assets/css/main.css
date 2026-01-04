@@ -200,6 +200,12 @@ body {
   color: white;
 }
 
+.btn.bluetheme {
+ background:  #1A2A38;
+ border-color: #1a2a38ac;
+ color: #fff1e5;
+}
+
 .btn.blue {
   background: var(--blue);
   border-color: rgba(37, 99, 235, .5);
