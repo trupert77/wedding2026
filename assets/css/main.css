@@ -92,7 +92,7 @@ body {
 
 .hero-banner {
   height: 260px;
-  background: url("assets/img/hero-banner.jpg") center/cover no-repeat;
+  background: url("/assets/img/hero-banner.jpg") center/cover no-repeat;
   position: relative;
 }
 
@@ -587,6 +587,7 @@ body {
 .couple-row {
   display: flex;
   align-items: flex-start;
+  flex-flow: column wrap;
   gap: 18px;
 }
 
