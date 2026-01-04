@@ -620,7 +620,7 @@ hr.bio-split {
   margin: 14px 0;
 }
 
-.floating-sign {
+.floatingsign {
   position: absolute;
   top: -42px;            /* pulls it upward over heads */
   left: 50%;
@@ -631,11 +631,9 @@ hr.bio-split {
   filter: drop-shadow(0 12px 26px rgba(0,0,0,0.22));
   animation: float 3.5s ease-in-out infinite;
 }
-
 @keyframes float {
-  0%{ transform: translate(-50%, 0px); }
-  50%{ transform: translate(-50%, -6px); }
-  100%{ transform: translate(-50%, 0px); }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
 }
 
 /* Make sure hero section can position absolute children */
