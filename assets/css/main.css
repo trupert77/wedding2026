@@ -618,14 +618,3 @@ hr.bio-split {
   border-top: 2px dashed rgba(15, 23, 42, .15);
   margin: 14px 0;
 }
-
-@media (max-width: 600px) {
-  .couple-row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .couple-img {
-    margin: 0 auto;
-  }
-}
