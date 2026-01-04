@@ -318,9 +318,10 @@ body {
   position: relative;
   margin-bottom: 8px;
   transform: rotate(-1deg);
-  width: -webkit-fit-available;
+  width: 100%;
   justify-content: center;
   color: #fff1e5;
+  top: -5px;
 }
 
 .pill-header:hover {
@@ -763,23 +764,23 @@ hr.bio-split {
 }
 
 /* The sign hovering above heads */
-.couple-sign {
+.couple-sign{
   position: absolute;
   left: 50%;
-  top: 360px;
-  transform: translate(-50%, -55%); /* hover amount */
+  top: 0;                          /* anchor to top of container */
+  transform: translate(-50%, -60%);
   width: min(420px, 80%);
   height: auto;
-  z-index: 1;
-  filter: drop-shadow(0 12px 12px rgba(0,0,0,.70));
+  z-index: 2;
+  filter: drop-shadow(0 12px 12px rgba(0,0,0,.35));
   animation: coupleFloat 3.6s ease-in-out infinite;
-  pointer-events: none; /* prevents blocking clicks */
+  pointer-events: none;
 }
 
 @keyframes coupleFloat{
-  0%   { transform: translate(-50%, -56%); }
-  50%  { transform: translate(-50%, -59%); }
-  100% { transform: translate(-50%, -56%); }
+  0%   { transform: translate(-50%, -60%); }
+  50%  { transform: translate(-50%, -68%); }
+  100% { transform: translate(-50%, -60%); }
 }
 
 /* Flex split bios */
@@ -804,3 +805,17 @@ hr.bio-split {
 
 .bio-card:first-child{ transform: rotate(-0.3deg); }
 .bio-card:last-child{ transform: rotate(0.3deg); }
+
+@media (max-width: 520px){
+  .couple-sign{
+    width: min(300px, 92%);
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,.30));
+  }
+
+  @keyframes coupleFloat{
+    0%   { transform: translate(-50%, -50%); }
+    50%  { transform: translate(-50%, -56%); }
+    100% { transform: translate(-50%, -50%); }
+  }
+}
