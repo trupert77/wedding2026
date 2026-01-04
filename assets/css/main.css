@@ -507,9 +507,9 @@ body {
 }
 
 .paper-grid {
-  display: grid;
+  display: flex;
+  flex-flow: column nowrap;
   gap: 14px;
-  grid-template-columns: repeat(12, 1fr);
 }
 
 .paper-card {
