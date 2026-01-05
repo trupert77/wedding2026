@@ -806,7 +806,7 @@ hr.bio-split {
 .bio-card:first-child{ transform: rotate(-0.3deg); }
 .bio-card:last-child{ transform: rotate(0.3deg); }
 
-@media (max-width: 520px){
+@media (max-width: 620px){
   .couple-sign{
     top: 40px;
     width: min(230px, 92%);
