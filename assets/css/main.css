@@ -422,9 +422,9 @@ body {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(15, 23, 42, .12);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, .10);
-  background: #fff;
+  border: 1px solid rgba(26, 42, 56, .40);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .70);
+
 }
 
 .poster::after {
@@ -468,9 +468,10 @@ body {
   justify-content: center;
   padding: 10px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .72);
+
   border: 1px solid rgba(15, 23, 42, .14);
   backdrop-filter: blur(10px);
+  z-index: 6;
 }
 
 .poster-nav a {
@@ -825,6 +826,8 @@ hr.bio-split {
   flex: 1 1 0;
   min-width: 260px; /* keeps it from getting too skinny */
 }
+
+
 
 /* Stack on mobile */
 @media (max-width: 820px){
