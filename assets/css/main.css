@@ -636,8 +636,9 @@ body {
   display: grid;
   place-items: center;
   font-weight: 900;
-  background: rgba(240, 138, 36, .16);
-  border: 1px solid rgba(240, 138, 36, .30);
+  background: rgba(26, 42, 56, .25);
+  border: 1px solid rgba(26, 42, 56, .30);
+  
 }
 
 .tagbar {
