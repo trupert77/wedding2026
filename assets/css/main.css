@@ -820,6 +820,7 @@ hr.bio-split {
   gap: 16px;
   align-items: stretch;
   margin-top: 16px;
+  width: 50%;
 }
 
 .bio-card{
