@@ -397,6 +397,10 @@ body {
  color: #fff1e5;
 }
 
+.pill.h2 {
+  background: red;
+  color: yellow;
+}
 /* Buttons feel clicky */
 .btn {
   transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
