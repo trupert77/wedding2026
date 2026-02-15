@@ -27,9 +27,9 @@
                     <div class="couple-hero">
                         <img class="couple-sign"
                             src="/assets/img/TravisMelissaSign.png"
-                            alt="Travis & Melissa sign" />
+                            alt="Travis & Melissa sign" loading="lazy" />
                         <img class="couple-art" src="/assets/img/MTicon.png"
-                            alt="Travis & Melissa" />
+                            alt="Travis & Melissa" loading="lazy" />
                     </div>
                     <!-- Optional: clickable “jump” buttons overlay -->
                     <div class="poster-nav">
@@ -72,7 +72,7 @@
                             <div class="poster">
                                 <img class="couple-art"
                                     src="/assets/img/MelissaPhoto.jpg"
-                                    alt="Melissa" />
+                                    alt="Melissa" loading="lazy" />
                             </div>
                             <div class="pill-header">🩺 Melissa, D.O.</div>
                             <p class="tiny muted">Board-certified Badass in a
@@ -89,7 +89,7 @@
                             <div class="poster">
                                 <img class="couple-art"
                                     src="/assets/img/travisphoto1.jpg"
-                                    alt="Travis" />
+                                    alt="Travis" loading="lazy" />
                             </div>
                             <div class="pill-header">🌐 Travis, CEO (Chief
                                 Ethernet Officer)</div>
@@ -106,11 +106,21 @@
 
                     <div class="paper-card mascot-wide">
                         <div class="mascot-row">
-                            <img src="/assets/img/bennettai.png"
-                                alt="Bennett" />
+                            <div class="video-wrap">
+                                <video
+                                    autoplay
+                                    muted
+                                    loop
+                                    playsinline>
+                                    <source src="assets/video/BennettVideo.mp4"
+                                        type="video/mp4" />
+                                </video>
+                            </div>
+
                             <div>
-                                <h3>Bennett</h3>
-                                <p class="muted">Long-hair dachshund + Bowtie =
+                                <div class="pill-header">Bennett</div>
+                                <p class="muted">Long-hair dachshund +
+                                    Bowtie =
                                     Ring Security 🐶💍</p>
                                 <button class="btn" type="button"
                                     onclick="runLoveExe()">🧠 Run
@@ -127,13 +137,34 @@
             <section class="paper" id="schedule">
                 <div class="paper-head">
                     <div class="pill headtext">Schedule of Events</div>
-                    <p class="muted">If you arrive on time, we’re amazed (and
-                        very grateful).</p>
+                    <p class="muted">TBD</p>
                 </div>
                 <div class="timeline">
-                    <div
-                        class="time-row"><span>TBD</span><strong>TBD</strong></div>
+                    <div class="time-row">
+                        <span>3:30 PM</span><strong>Arrive + find your
+                            seat</strong>
+                    </div>
+                    <div class="time-row">
+                        <span>4:30 PM</span><strong>Ceremony</strong>
+                    </div>
+                    <div class="time-row">
+                        <span>5:00 PM</span><strong>Cocktails +
+                            photos</strong>
+                    </div>
+                    <div class="time-row">
+                        <span>5:45 PM</span><strong>Reception</strong>
+                    </div>
+                    <div class="time-row">
+                        <span>7:00 PM</span><strong>Dancing &
+                            Shenanigans</strong>
+                    </div>
+                    <div class="time-row">
+                        <span>Late</span><strong>Snacks</strong>
+                    </div>
                 </div>
+                <p class="tiny muted">Times may shift slightly — we’ll keep
+                    this
+                    updated.</p>
                 <!-- A Later Date
                 <div class="timeline">
                     <div class="time-row"><span>3:30 PM</span><strong>Guests
@@ -157,31 +188,81 @@
                 </div>
 
                 <div class="avatars">
-                    <div class="avatar"><div
-                            class="circle">JF</div><div><strong>Josh
-                                Fleck</strong><div
-                                class="tiny muted">Best Man</div></div></div>
-                    <div class="avatar"><div
-                            class="circle">MF</div><div><strong>Matt
-                                Fleck</strong><div
-                                class="tiny muted">Groomsman</div></div></div>
-                    <div class="avatar"><div
-                            class="circle">SA</div><div><strong>Shawn
-                                Arnett</strong><div
-                                class="tiny muted">Groomsman</div></div></div>
-                    <div class="avatar"><div
-                            class="circle">HT</div><div><strong>Hannah
-                                Tache</strong><div
-                                class="tiny muted">Bridesmaid</div></div></div>
-                    <div class="avatar"><div
-                            class="circle">FT</div><div><strong>Felica
-                                Tache</strong><div
-                                class="tiny muted">Bridesmaid</div></div></div>
-                    <div class="avatar"><div
-                            class="circle">MR</div><div><strong>Megan
-                                Rupert</strong><div
-                                class="tiny muted">Bridesmaid</div></div></div>
+
+                    <div class="avatar">
+                        <div class="avatar-info">
+                            <strong>Josh Fleck</strong>
+                            <div class="tiny muted">Best Man</div>
+                        </div>
+                        <img class="avatar-photo"
+                            src="/assets/img/jp.jpg"
+                            alt="Josh Fleck"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback">JF</div>
+                    </div>
+
+                    <div class="avatar">
+                        <div class="avatar-info">
+                            <strong>Matt Fleck</strong>
+                            <div class="tiny muted">Groomsman</div>
+                        </div>
+                        <img class="avatar-photo"
+                            src="/assets/img/MF.jpg"
+                            alt="Matt Fleck"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback">MF</div>
+                    </div>
+
+                    <div class="avatar">
+                        <div class="avatar-info">
+                            <strong>Shawn Arnett</strong>
+                            <div class="tiny muted">Groomsman</div>
+                        </div>
+                        <img class="avatar-photo"
+                            src="/assets/img/SA.jpg"
+                            alt="Shawn Arnett"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback">SA</div>
+                    </div>
+
+                    <div class="avatar">
+                        <div class="avatar-info">
+                            <strong>Hannah Tache</strong>
+                            <div class="tiny muted">Bridesmaid</div>
+                        </div>
+                        <img class="avatar-photo"
+                            src="/assets/img/hannah.jpg"
+                            alt="Hannah Tache"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback">HT</div>
+                    </div>
+
+                    <div class="avatar">
+                        <div class="avatar-info">
+                            <strong>Felica Tache</strong>
+                            <div class="tiny muted">Bridesmaid</div>
+                        </div>
+                        <img class="avatar-photo"
+                            src="/assets/img/felica.jpg"
+                            alt="Felica Tache"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback">FT</div>
+                    </div>
+
+                    <div class="avatar">
+                        <div class="avatar-info">
+                            <strong>Megan Rupert</strong>
+                            <div class="tiny muted">Bridesmaid</div>
+                        </div>
+                        <img class="avatar-photo"
+                            src="/assets/img/megan.jpg"
+                            alt="Megan Rupert"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-fallback">MR</div>
+                    </div>
+
                 </div>
+
             </section>
 
             <section class="paper" id="travel">
@@ -189,7 +270,7 @@
                     <h2 class="pill headtext">Travel & Stay</h2>
                 </div>
                 <div class="paper-head">
-                    <h3>Accommodations</h3>
+                    <h3 class="pill headtext">Accommodations</h3>
                     <p class="muted">We've reserved room blocks at nearby
                         hotels. Have Fun!
                     </p>
@@ -198,25 +279,28 @@
                     <div class="paper-card">
                         <h3>This Hotel 1</h3>
                         <p class="muted">Hotel 1</p>
-                        <p class="muted">Enjoy lovely battle creek. Bring a
-                            gun.</p>
+                        <p class="muted">Enjoy lovely Battle Creek. Lock
+                            your
+                            car, not your vibes. 😄</p>
                     </div>
                     <div class="paper-card">
                         <h3>This Hotel 2</h3>
                         <p class="muted">Hotel 2</p>
-                        <p class="muted">Enjoy the hustle and bustle of downtown
-                            ceral city! Still, bring a
-                            gun.</p>
+                        <p class="muted">Downtown “cereal city” energy.
+                            Bring
+                            snacks and a charger — you’ll be fine. 🥣🔋</p>
+
                     </div>
-                    <div class="paper-head">
-                        <h3>Airports</h3>
-                        <p class="muted">Something about flying.
+                    <div class="paper-head" style="margin-top:18px;">
+                        <h3 class="pill headtext">Airports</h3>
+                        <p class="muted">Closest options for out-of-towners.
                         </p>
                     </div>
                     <div class="paper-card">
                         <h3>Detroit, MI</h3>
                         <p class="muted">DTW</p>
-                        <p class="muted">2500 World Gateway Place, Detroit, MI
+                        <p class="muted">2500 World Gateway Place, Detroit,
+                            MI
                             48242</p>
                     </div>
                     <div class="paper-card">
@@ -228,7 +312,8 @@
                     <div class="paper-card">
                         <h3>Grand Rapids, MI</h3>
                         <p class="muted">GRR</p>
-                        <p class="muted">550 Grandville Avenue, Grand Rapids, MI
+                        <p class="muted">550 Grandville Avenue, Grand
+                            Rapids, MI
                             49503</p>
                     </div>
                 </div>
@@ -236,31 +321,124 @@
 
             <section class="paper" id="faq">
                 <div class="paper-head">
-                    <h2>FAQs</h2>
+                    <h2 class="pill headtext">FAQs</h2>
                 </div>
-                <ul class="bullets">
-                    <li><strong>Are we farmers?</strong> No. This is aesthetic
-                        farming.</li>
-                    <li><strong>Dress code?</strong> Casual-nice. Comfy shoes
-                        recommended.</li>
-                    <li><strong>Will there be a bonfire?</strong> Yes 🔥</li>
-                </ul>
+                <div class="paper-card">
+                    <ul class="bullets">
+                        <li><strong>What’s the dress code?</strong> Semi-formal
+                            /
+                            cocktail. Think fall wedding, not farm chores.</li>
+                        <li><strong>Will there be alcohol?</strong> Yes. Hydrate
+                            responsibly and dance irresponsibly.</li>
+                        <li><strong>Kids?</strong> We love your tiny humans —
+                            details coming soon.</li>
+                        <li><strong>Plus ones?</strong> If your invite says +1,
+                            bring your favorite human.</li>
+                        <li><strong>Shoes?</strong> Ceremony is on grass — block
+                            heels or comfy shoes recommended.</li>
+                        <li><strong>Will there be snacks?</strong> Yes.
+                            Late-night
+                            snacks included. 🔥</li>
+                        <li><strong>Will Bennett be there?</strong> Ring
+                            security
+                            has been outsourced.</li>
+                    </ul>
+                </div>
             </section>
+
+            <section class="paper" id="gallery">
+                <div class="paper-head">
+                    <h2 class="pill headtext">Photos</h2>
+                    <p class="muted">A few moments from the highlight reel
+                        ❤️</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Untitled_1.1.4.jpg"
+                        aria-label="Open photo 1">
+                        <img src="/assets/img/gallery/Untitled_1.1.4.jpg"
+                            alt="Travis and Melissa photo 1" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Untitled_1.1.2.jpg"
+                        aria-label="Open photo 2">
+                        <img src="/assets/img/gallery/Untitled_1.1.2.jpg"
+                            alt="Travis and Melissa photo 2" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Melissa and Travis-93.jpg"
+                        aria-label="Open photo 2">
+                        <img src="/assets/img/gallery/Melissa and Travis-93.jpg"
+                            alt="Travis and Melissa photo 2" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Melissa and Travis-22.jpg"
+                        aria-label="Open photo 3">
+                        <img src="/assets/img/gallery/Melissa and Travis-22.jpg"
+                            alt="Travis and Melissa photo 3" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Melissa and Travis-7.jpg"
+                        aria-label="Open photo 4">
+                        <img src="/assets/img/gallery/Melissa and Travis-7.jpg"
+                            alt="Travis and Melissa photo 4" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Melissa and Travis-38.jpg"
+                        aria-label="Open photo 5">
+                        <img src="/assets/img/gallery/Melissa and Travis-38.jpg"
+                            alt="Travis and Melissa photo 5" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Melissa and Travis-127.jpg"
+                        aria-label="Open photo 6">
+                        <img
+                            src="/assets/img/gallery/Melissa and Travis-127.jpg"
+                            alt="Travis and Melissa photo 6" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Melissa and Travis-129.jpg"
+                        aria-label="Open photo 6">
+                        <img
+                            src="/assets/img/gallery/Melissa and Travis-129.jpg"
+                            alt="Travis and Melissa photo 6" loading="lazy">
+                    </button>
+
+                    <button class="gallery-item" type="button"
+                        data-full="/assets/img/gallery/Melissa and Travis-109.jpg"
+                        aria-label="Open photo 6">
+                        <img
+                            src="/assets/img/gallery/Melissa and Travis-109.jpg"
+                            alt="Travis and Melissa photo 6" loading="lazy">
+                    </button>
+                </div>
+            </section>
+
+            <!-- Lightbox (put once, near end of body) -->
+            <div class="lightbox" id="lightbox" aria-hidden="true">
+                <button class="lightbox-close" type="button"
+                    aria-label="Close">✕</button>
+                <div class="lightbox-img" role="img" aria-label></div>
+            </div>
 
             <footer class="tagbar">
                 <div class="tags">
-                    <span>#DoctorAndTheDunce</span>
+                    <span>#Rupert+Taché</span>
                     <span>#FarmButBoujee</span>
                     <span>#LoveAtTheEdge</span>
                 </div>
                 <div class="tiny muted">📍 Res Les Farms, Michigan</div>
             </footer>
-
-            <div class="footer">
-                <div>📍 Res Les Farms, Michigan</div>
-            </div>
         </div>
 
-        <script src="assets/js/main.js"></script>
+        <script src="/assets/js/main.js?v=1"></script>
     </body>
 </html>
