@@ -22,13 +22,17 @@ html, body {
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color: var(--ink);
+
   background:
     url("/assets/img/paper-texture.jpg") repeat,
-    radial-gradient(900px 500px at 15% 10%, rgba(240, 138, 36, .16), transparent 60%),
-    radial-gradient(900px 500px at 90% 15%, rgba(37, 99, 235, .14), transparent 60%),
+    radial-gradient(900px 500px at 15% 10%, rgba(240, 138, 36, .10), transparent 60%),
+    radial-gradient(900px 500px at 90% 15%, rgba(37, 99, 235, .08), transparent 60%),
     var(--bg);
+
+  background-blend-mode: multiply, normal, normal, normal;
   background-attachment: fixed;
 }
+
 
 img, video {
   max-width: 100%;
@@ -64,9 +68,21 @@ img, video {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   font-weight: 900;
   letter-spacing: -.2px;
   font-size: 20px;
+}
+
+.brand-icon {
+  width: 40px;
+  /* adjust if you want bigger */
+  height: 28px;
+  border-radius: 10px;
+  /* or 50% if circular */
+  object-fit: cover;
 }
 
 .brand2nd {
@@ -1055,5 +1071,128 @@ hr.bio-split {
     100% {
       transform: translate(-50%, -50%);
     }
+  }
+}
+
+/* ==========================================
+   Background FX — Gradient drift + paper dust
+   Paste at END of your CSS
+   ========================================== */
+
+/* 1) Animated gradient drift (subtle) */
+body {
+  /* Keep your existing background, but make the gradient layers "drift" */
+  background-size:
+    auto,
+    /* paper texture */
+    180% 180%,
+    /* orange glow */
+    180% 180%,
+    /* blue glow */
+    auto;
+  /* base color */
+  animation: bgDrift 22s ease-in-out infinite alternate;
+}
+
+@keyframes bgDrift {
+  0% {
+    background-position:
+      0 0,
+      10% 12%,
+      92% 14%,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      0 0,
+      18% 18%,
+      82% 20%,
+      0 0;
+  }
+}
+
+/* 2) Falling “paper dust” overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20% 0 0 0;
+  pointer-events: none;
+  z-index: -1;
+  /* behind content (works with your current layout) */
+  opacity: 0.18;
+
+  /* three dot layers, different sizes */
+  background-image:
+    radial-gradient(circle, rgba(15, 23, 42, 0.22) 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(15, 23, 42, 0.16) 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 2px);
+
+  background-size:
+    220px 220px,
+    320px 320px,
+    460px 460px;
+
+  background-position:
+    0 0,
+    60px 120px,
+    140px 40px;
+
+  filter: blur(0.25px);
+  animation: dustFall 26s linear infinite;
+}
+
+@keyframes dustFall {
+  0% {
+    transform: translate3d(0, -12%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 12%, 0);
+  }
+}
+
+/* A tiny sideways drift so it feels natural */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -20% 0 0 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.10;
+
+  background-image:
+    radial-gradient(circle, rgba(240, 138, 36, 0.16) 1px, transparent 2px),
+    radial-gradient(circle, rgba(37, 99, 235, 0.12) 1px, transparent 2px);
+
+  background-size:
+    520px 520px,
+    680px 680px;
+
+  background-position:
+    0 0,
+    120px 240px;
+
+  animation: dustDrift 34s ease-in-out infinite alternate;
+}
+
+@keyframes dustDrift {
+  0% {
+    transform: translate3d(-1.5%, -8%, 0);
+  }
+
+  100% {
+    transform: translate3d(1.5%, 8%, 0);
+  }
+}
+
+/* Accessibility: respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  body::before, body::after {
+    animation: none;
   }
 }
