@@ -17,6 +17,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 body {
@@ -31,8 +32,15 @@ body {
 
   background-blend-mode: multiply, normal, normal, normal;
   background-attachment: fixed;
-}
 
+  /* Animated background positions */
+  background-size:
+    auto,
+    180% 180%,
+    180% 180%,
+    auto;
+  animation: bgDrift 22s ease-in-out infinite alternate;
+}
 
 img, video {
   max-width: 100%;
@@ -44,6 +52,8 @@ img, video {
   max-width: 1050px;
   margin: 0 auto;
   padding: 22px;
+  position: relative;
+  z-index: 1;
 }
 
 .nav {
@@ -54,7 +64,7 @@ img, video {
   background: rgba(76, 148, 113, .85);
   border-bottom: 1px solid var(--line);
   rotate: -0.8deg;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
 }
 
 .nav-inner {
@@ -78,16 +88,14 @@ img, video {
 
 .brand-icon {
   width: 40px;
-  /* adjust if you want bigger */
   height: 28px;
   border-radius: 10px;
-  /* or 50% if circular */
   object-fit: cover;
 }
 
 .brand2nd {
   font-weight: 600;
-  font-size: 16px
+  font-size: 16px;
 }
 
 .links {
@@ -97,7 +105,7 @@ img, video {
   justify-content: flex-end;
 }
 
-
+/* ---- Hero ---- */
 
 .hero {
   border-radius: 28px;
@@ -137,12 +145,14 @@ img, video {
 .hero-title h1 {
   margin: 0;
   font-size: clamp(34px, 5vw, 56px);
+  letter-spacing: -1px;
 }
 
 .hero-title p {
   margin: 6px 0 0;
   color: rgba(255, 255, 255, .9);
   font-weight: 700;
+  opacity: .95;
 }
 
 .ribbon {
@@ -154,29 +164,15 @@ img, video {
   background: rgba(255, 255, 255, .85);
   border: 1px solid var(--line);
   font-weight: 900;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
 }
+
+/* ---- Grid ---- */
 
 .grid {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(12, 1fr);
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
-  padding: 16px;
-}
-
-.card h2 {
-  margin: 0 0 8px;
-  font-size: 18px;
-}
-
-.muted {
-  color: var(--muted);
 }
 
 .col-7 {
@@ -194,6 +190,49 @@ img, video {
 .col-12 {
   grid-column: span 12;
 }
+
+/* ---- Cards ---- */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+  padding: 16px;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--orange);
+  box-shadow: 0 8px 14px rgba(240, 138, 36, .28);
+}
+
+.card, .hero {
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .10);
+  border-color: rgba(15, 23, 42, .18);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---- Buttons ---- */
 
 .btnrow {
   display: flex;
@@ -214,6 +253,17 @@ img, video {
   text-decoration: none;
   font-weight: 900;
   font-size: 14px;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, .10);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(.98);
+  filter: brightness(.98);
 }
 
 .btn.orange {
@@ -234,64 +284,8 @@ img, video {
   color: white;
 }
 
-.mascot {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
+/* ---- Countdown ---- */
 
-.mascot img {
-  width: 320px;
-  height: auto;
-  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, .12));
-}
-
-.footer {
-  margin-top: 18px;
-  text-align: center;
-  color: var(--muted);
-  padding: 18px 0 34px;
-}
-
-@media (max-width: 920px) {
-  .col-7, .col-5, .col-6, .col-12 {
-    grid-column: span 12;
-  }
-
-  .hero-content {
-    margin-top: -170px;
-  }
-}
-
-
-/* --- PRETTY MODE v1 --- */
-
-/* Softer glass cards + subtle motion */
-.card, .hero {
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, .10);
-  border-color: rgba(15, 23, 42, .18);
-}
-
-/* Make the hero title pop more */
-.hero-title h1 {
-  letter-spacing: -1px;
-}
-
-.hero-title p {
-  opacity: .95;
-}
-
-/* Better ribbon */
-.ribbon {
-  box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
-}
-
-/* Prettier countdown row */
 #countdown span {
   display: inline-flex;
   align-items: baseline;
@@ -306,26 +300,7 @@ img, video {
   font-size: 18px;
 }
 
-/* Nice section headings */
-.card h2 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.card h2::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--orange);
-  box-shadow: 0 8px 14px rgba(240, 138, 36, .28);
-}
-
-/* Cute “paper” nav effect */
-.nav {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
-}
+/* ---- Pill Header ---- */
 
 .pill-header {
   display: inline-flex;
@@ -350,8 +325,6 @@ img, video {
   transform: translateY(-2px) rotate(0deg);
 }
 
-
-/* Tape effect on each pill */
 .pill-header::after {
   content: "";
   position: absolute;
@@ -368,7 +341,8 @@ img, video {
   pointer-events: none;
 }
 
-/* --- Taped nav pills --- */
+/* ---- Taped Nav Pills ---- */
+
 .pill {
   text-decoration: none;
   color: var(--ink);
@@ -382,7 +356,6 @@ img, video {
   transition: transform .14s ease;
 }
 
-/* Tape effect on each pill */
 .pill::after {
   content: "";
   position: absolute;
@@ -398,19 +371,17 @@ img, video {
   z-index: 2;
 }
 
-/* Hover lifts the card slightly, tape stays */
 .pill:hover {
   transform: translateY(-2px) rotate(1deg);
 }
 
-/* Primary pill gets tape too, but recolored */
+.pill.primary {
+  background-color: rgb(231 111 81);
+}
+
 .pill.primary::after {
   background: rgba(255, 255, 255, 0.45);
   border-color: rgba(255, 255, 255, 0.3);
-}
-
-.pill.primary {
-  background-color: rgb(231 111 81);
 }
 
 .pill.blue {
@@ -424,34 +395,54 @@ img, video {
   color: yellow;
 }
 
-/* Buttons feel clicky */
-.btn {
-  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+/* ---- Mascot ---- */
+
+.mascot {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 26px rgba(0, 0, 0, .10);
-}
-
-.btn:active {
-  transform: translateY(0px) scale(.98);
-  filter: brightness(.98);
-}
-
-/* Bennett block polish */
 .mascot img {
+  width: 320px;
+  height: auto;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, .12));
   border-radius: 18px;
 }
 
-/* ---- Storybook Mimic Pack ---- */
+.mascot-wide {
+  grid-column: span 12;
+}
+
+.mascot-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.mascot-row img {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .12));
+}
+
+/* ---- Footer ---- */
+
+.footer {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--muted);
+  padding: 18px 0 34px;
+}
+
+/* ---- Poster (Storybook) ---- */
+
 .poster {
   position: relative;
   border-radius: 28px;
   overflow: hidden;
   border: 1px solid rgba(26, 42, 56, .40);
   box-shadow: 0 18px 50px rgba(0, 0, 0, .70);
-
 }
 
 .poster::after {
@@ -461,7 +452,6 @@ img, video {
   left: 0;
   width: 100%;
   height: 45%;
-  /* controls gradient size */
   background: linear-gradient(to top,
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 255, 255, 0) 100%);
@@ -494,7 +484,6 @@ img, video {
   justify-content: center;
   padding: 10px 12px;
   border-radius: 999px;
-
   border: 1px solid rgba(15, 23, 42, .14);
   backdrop-filter: blur(10px);
   z-index: 6;
@@ -514,6 +503,8 @@ img, video {
 .poster-nav a:hover {
   transform: translateY(-1px);
 }
+
+/* ---- Paper Sections ---- */
 
 .paper {
   margin-top: 18px;
@@ -590,6 +581,8 @@ img, video {
   font-size: 16px;
 }
 
+/* ---- Utility ---- */
+
 .tiny {
   font-size: 13px;
 }
@@ -608,21 +601,7 @@ img, video {
   margin: 6px 0;
 }
 
-.mascot-wide {
-  grid-column: span 12;
-}
-
-.mascot-row {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.mascot-row img {
-  width: 300px;
-  height: auto;
-  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .12));
-}
+/* ---- Timeline ---- */
 
 .timeline {
   display: grid;
@@ -644,6 +623,8 @@ img, video {
   color: rgba(15, 23, 42, .65);
 }
 
+/* ---- Avatars ---- */
+
 .avatars {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -662,6 +643,44 @@ img, video {
   border: 1px solid rgba(15, 23, 42, .10);
 }
 
+.avatar:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.avatar-info {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.avatar-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.avatar:hover .avatar-photo {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.avatar-fallback {
+  display: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #111827;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
 .circle {
   width: 44px;
   height: 44px;
@@ -671,8 +690,9 @@ img, video {
   font-weight: 900;
   background: rgba(26, 42, 56, .25);
   border: 1px solid rgba(26, 42, 56, .30);
-
 }
+
+/* ---- Tags ---- */
 
 .tagbar {
   margin: 18px 0 34px;
@@ -699,85 +719,12 @@ img, video {
   border: 1px solid rgba(240, 138, 36, .35);
 }
 
-.avatar {
-  display: grid;
-  grid-template-columns: 1fr 64px;
-  align-items: center;
-  gap: 16px;
-}
-
-.avatar-info {
-  display: flex;
-  flex: 1;
-  gap: 2px;
-  flex-direction: column;
-}
-
-.avatar-photo {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #e5e7eb;
-  display: block;
-}
-
-.avatar:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.avatar-fallback {
-  display: none;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #111827;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.avatar-photo {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.avatar:hover .avatar-photo {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-
-@media (max-width: 900px) {
-  .paper-card {
-    grid-column: span 12;
-  }
-
-  .avatar {
-    grid-column: span 6;
-  }
-
-  .poster-nav {
-    width: calc(100% - 20px);
-  }
-}
-
-@media (max-width: 520px) {
-  .avatar {
-    grid-column: span 12;
-  }
-
-  .mascot-row {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+/* ---- Video ---- */
 
 .video-wrap {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  /* adjust if needed */
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -786,9 +733,10 @@ img, video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* THIS fixes the weird fitting */
   display: block;
 }
+
+/* ---- Couple Section ---- */
 
 .couple-wide {
   grid-column: span 12;
@@ -834,11 +782,9 @@ hr.bio-split {
 .floatingsign {
   position: absolute;
   top: -42px;
-  /* pulls it upward over heads */
   left: 50%;
   transform: translateX(-50%);
   width: 240px;
-  /* adjust if needed */
   height: auto;
   z-index: 10;
   filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.22));
@@ -855,11 +801,6 @@ hr.bio-split {
   }
 }
 
-/* Make sure hero section can position absolute children */
-.hero-content {
-  position: relative;
-}
-
 /* Join poster + couple art cleanly */
 .poster-img, .couple-img {
   display: block;
@@ -871,7 +812,6 @@ hr.bio-split {
   margin-bottom: 14px;
 }
 
-/* Center both when inside a joined container */
 .joined-art {
   display: flex;
   flex-direction: column;
@@ -880,23 +820,15 @@ hr.bio-split {
   padding: 10px;
 }
 
-/* Optional mobile polish */
-@media (max-width: 600px) {
-  .joined-art {
-    align-items: center;
-  }
-}
+/* ---- Couple Hero ---- */
 
-/* Couple art block */
 .couple-hero {
   position: relative;
   width: min(720px, 100%);
   margin: 0 auto 14px;
   padding-top: 38px;
-  /* makes room for the floating sign */
 }
 
-/* The couple illustration */
 .couple-art {
   display: block;
   width: 100%;
@@ -905,12 +837,10 @@ hr.bio-split {
   z-index: 0;
 }
 
-/* The sign hovering above heads */
 .couple-sign {
   position: absolute;
   left: 50%;
   top: 420px;
-  /* anchor to top of container */
   transform: translate(-50%, -60%);
   width: min(420px, 80%);
   height: auto;
@@ -934,7 +864,8 @@ hr.bio-split {
   }
 }
 
-/* Flex split bios */
+/* ---- Bios ---- */
+
 .bio-flex {
   display: flex;
   gap: 16px;
@@ -946,19 +877,22 @@ hr.bio-split {
 .bio-card {
   flex: 1 1 0;
   min-width: 260px;
-  /* keeps it from getting too skinny */
 }
+
+.bio-card:first-child {
+  transform: rotate(-0.3deg);
+}
+
+.bio-card:last-child {
+  transform: rotate(0.3deg);
+}
+
+/* ---- Gallery ---- */
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-}
-
-@media (max-width: 820px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .gallery-item {
@@ -986,7 +920,8 @@ hr.bio-split {
   filter: saturate(1.05);
 }
 
-/* Lightbox */
+/* ---- Lightbox ---- */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -1025,30 +960,42 @@ hr.bio-split {
   line-height: 1;
 }
 
-.lightbox {
-  display: none;
-}
+/* ==========================================
+   Responsive
+   ========================================== */
 
-.lightbox.open {
-  display: flex;
-}
+@media (max-width: 920px) {
+  .col-7, .col-5, .col-6, .col-12 {
+    grid-column: span 12;
+  }
 
-
-
-
-/* Stack on mobile */
-@media (max-width: 820px) {
-  .bio-flex {
-    flex-direction: column;
+  .hero-content {
+    margin-top: -170px;
   }
 }
 
-.bio-card:first-child {
-  transform: rotate(-0.3deg);
+@media (max-width: 900px) {
+  .paper-card {
+    grid-column: span 12;
+  }
+
+  .avatar {
+    grid-column: span 6;
+  }
+
+  .poster-nav {
+    width: calc(100% - 20px);
+  }
 }
 
-.bio-card:last-child {
-  transform: rotate(0.3deg);
+@media (max-width: 820px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bio-flex {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 620px) {
@@ -1074,72 +1021,75 @@ hr.bio-split {
   }
 }
 
-/* ==========================================
-   Background FX — Gradient drift + paper dust
-   Paste at END of your CSS
-   ========================================== */
-
-/* 1) Animated gradient drift (subtle) */
-body {
-  /* Keep your existing background, but make the gradient layers "drift" */
-  background-size:
-    auto,
-    /* paper texture */
-    180% 180%,
-    /* orange glow */
-    180% 180%,
-    /* blue glow */
-    auto;
-  /* base color */
-  animation: bgDrift 22s ease-in-out infinite alternate;
+@media (max-width: 600px) {
+  .joined-art {
+    align-items: center;
+  }
 }
+
+@media (max-width: 520px) {
+  .avatar {
+    grid-column: span 12;
+  }
+
+  .mascot-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   Background FX — dust layers on body pseudo-elements
+   ========================================== */
 
 @keyframes bgDrift {
   0% {
-    background-position:
-      0 0,
-      10% 12%,
-      92% 14%,
-      0 0;
+    background-position: 0 0, 10% 12%, 92% 14%, 0 0;
   }
 
   100% {
-    background-position:
-      0 0,
-      18% 18%,
-      82% 20%,
-      0 0;
+    background-position: 0 0, 18% 18%, 82% 20%, 0 0;
   }
 }
 
-/* 2) Falling “paper dust” overlay */
+/* Dust layer 1 */
 body::before {
   content: "";
   position: fixed;
   inset: -20% 0 0 0;
   pointer-events: none;
-  z-index: -1;
-  /* behind content (works with your current layout) */
+  z-index: 0;
   opacity: 0.18;
 
-  /* three dot layers, different sizes */
   background-image:
     radial-gradient(circle, rgba(15, 23, 42, 0.22) 1px, transparent 1.6px),
     radial-gradient(circle, rgba(15, 23, 42, 0.16) 1px, transparent 1.8px),
     radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 2px);
 
-  background-size:
-    220px 220px,
-    320px 320px,
-    460px 460px;
-
-  background-position:
-    0 0,
-    60px 120px,
-    140px 40px;
+  background-size: 220px 220px, 320px 320px, 460px 460px;
+  background-position: 0 0, 60px 120px, 140px 40px;
 
   filter: blur(0.25px);
   animation: dustFall 26s linear infinite;
+}
+
+/* Dust layer 2 (subtle colored drift) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -20% 0 0 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.10;
+
+  background-image:
+    radial-gradient(circle, rgba(240, 138, 36, 0.16) 1px, transparent 2px),
+    radial-gradient(circle, rgba(37, 99, 235, 0.12) 1px, transparent 2px);
+
+  background-size: 520px 520px, 680px 680px;
+  background-position: 0 0, 120px 240px;
+
+  animation: dustDrift 34s ease-in-out infinite alternate;
 }
 
 @keyframes dustFall {
@@ -1152,30 +1102,6 @@ body::before {
   }
 }
 
-/* A tiny sideways drift so it feels natural */
-body::after {
-  content: "";
-  position: fixed;
-  inset: -20% 0 0 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.10;
-
-  background-image:
-    radial-gradient(circle, rgba(240, 138, 36, 0.16) 1px, transparent 2px),
-    radial-gradient(circle, rgba(37, 99, 235, 0.12) 1px, transparent 2px);
-
-  background-size:
-    520px 520px,
-    680px 680px;
-
-  background-position:
-    0 0,
-    120px 240px;
-
-  animation: dustDrift 34s ease-in-out infinite alternate;
-}
-
 @keyframes dustDrift {
   0% {
     transform: translate3d(-1.5%, -8%, 0);
@@ -1186,13 +1112,13 @@ body::after {
   }
 }
 
-/* Accessibility: respect reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  body {
-    animation: none;
-  }
+/* ---- Reduced Motion ---- */
 
-  body::before, body::after {
+@media (prefers-reduced-motion: reduce) {
+
+  body,
+  body::before,
+  body::after {
     animation: none;
   }
 }
