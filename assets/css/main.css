@@ -636,9 +636,10 @@ img, video {
 
 .avatar {
   grid-column: span 4;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 64px;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   padding: 12px;
   border-radius: 18px;
   background: rgba(255, 255, 255, .86);
