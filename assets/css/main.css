@@ -232,6 +232,11 @@ img, video {
   color: var(--muted);
 }
 
+.bolder {
+  font-weight: 600;
+  color: #0f172a;
+}
+
 /* ---- Buttons ---- */
 
 .btnrow {
@@ -587,6 +592,10 @@ img, video {
   font-size: 13px;
 }
 
+.medium {
+  font-size: 16px;
+}
+
 .mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -810,6 +819,7 @@ hr.bio-split {
   box-shadow: var(--shadow);
   border: 2px solid rgba(15, 23, 42, 0.08);
   margin-bottom: 14px;
+  padding: 5px;
 }
 
 .joined-art {
