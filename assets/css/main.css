@@ -232,6 +232,10 @@ img, video {
   color: var(--muted);
 }
 
+.reg { 
+  color:#111
+}
+
 .bolder {
   font-weight: 600;
   color: #0f172a;
