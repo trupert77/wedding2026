@@ -232,8 +232,8 @@ img, video {
   color: var(--muted);
 }
 
-.reg { 
-  color:#111
+.reg {
+  color: #111
 }
 
 .bolder {
@@ -1135,4 +1135,16 @@ body::after {
   body::after {
     animation: none;
   }
+}
+
+.rsvp-card {
+  padding: 20px;
+  overflow: hidden;
+}
+
+#rsvp iframe {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  background: #fff;
 }
