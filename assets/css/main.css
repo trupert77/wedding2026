@@ -847,9 +847,9 @@ hr.bio-split {
 /* ---- Travel Section ---- */
 
 .travel-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10px;
 }
 
 .hotel-card h3 {
