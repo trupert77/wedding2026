@@ -407,6 +407,7 @@ img, video {
 .pill.teal {
   background: rgba(76, 148, 113, .85);
   border-color: rgba(76, 148, 113, .5);
+  text-align: center;
 }
 
 .pill.h2 {
@@ -1133,78 +1134,16 @@ hr.bio-split {
   }
 }
 
-/* Dust layer 1 */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -20% 0 0 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.18;
-
-  background-image:
-    radial-gradient(circle, rgba(15, 23, 42, 0.22) 1px, transparent 1.6px),
-    radial-gradient(circle, rgba(15, 23, 42, 0.16) 1px, transparent 1.8px),
-    radial-gradient(circle, rgba(15, 23, 42, 0.12) 1px, transparent 2px);
-
-  background-size: 220px 220px, 320px 320px, 460px 460px;
-  background-position: 0 0, 60px 120px, 140px 40px;
-
-  filter: blur(0.25px);
-  animation: dustFall 26s linear infinite;
-}
-
-/* Dust layer 2 (subtle colored drift) */
-body::after {
-  content: "";
-  position: fixed;
-  inset: -20% 0 0 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.10;
-
-  background-image:
-    radial-gradient(circle, rgba(240, 138, 36, 0.16) 1px, transparent 2px),
-    radial-gradient(circle, rgba(37, 99, 235, 0.12) 1px, transparent 2px);
-
-  background-size: 520px 520px, 680px 680px;
-  background-position: 0 0, 120px 240px;
-
-  animation: dustDrift 34s ease-in-out infinite alternate;
-}
-
-@keyframes dustFall {
-  0% {
-    transform: translate3d(0, -12%, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 12%, 0);
-  }
-}
-
-@keyframes dustDrift {
-  0% {
-    transform: translate3d(-1.5%, -8%, 0);
-  }
-
-  100% {
-    transform: translate3d(1.5%, 8%, 0);
-  }
-}
 
 /* ---- Reduced Motion ---- */
-
+/* To this: */
 @media (prefers-reduced-motion: reduce) {
-
-  body,
-  body::before,
-  body::after {
+  body {
     animation: none;
   }
 }
 
-.rsvp-card {
+That kills .rsvp-card {
   padding: 20px;
   overflow: hidden;
 }
