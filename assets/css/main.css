@@ -834,6 +834,63 @@ hr.bio-split {
   padding: 10px;
 }
 
+/* ---- Travel Section ---- */
+
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.hotel-card h3 {
+  margin: 0 0 4px;
+}
+
+.hotel-address {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.airport-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.airport-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.airport-card h3 {
+  margin: 0 0 2px;
+  font-size: 15px;
+}
+
+.airport-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--orange);
+  background: rgba(240, 138, 36, .08);
+  border: 1px solid rgba(240, 138, 36, .18);
+  border-radius: 12px;
+  padding: 10px 14px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+@media (max-width: 820px) {
+
+  .travel-grid,
+  .airport-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---- Couple Hero ---- */
 
 .couple-hero {
