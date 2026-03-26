@@ -232,6 +232,10 @@ img, video {
   color: var(--muted);
 }
 
+.ink {
+  color: var(--ink);
+}
+
 .reg {
   color: #111
 }
@@ -397,6 +401,12 @@ img, video {
   background: #1A2A38;
   border-color: #1a2a38ac;
   color: #fff1e5;
+}
+
+
+.pill.teal {
+  background: rgba(76, 148, 113, .85);
+  border-color: rgba(76, 148, 113, .5);
 }
 
 .pill.h2 {
