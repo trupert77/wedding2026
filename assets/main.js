@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countdownEl = document.getElementById("countdown");
 
   if (countdownEl) {
-    const weddingDate = new Date("September 26, 2026 16:30:00").getTime();
+    const weddingDate = new Date("September 26, 2026 15:30:00").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
